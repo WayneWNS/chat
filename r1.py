@@ -7,6 +7,7 @@ def read_file(filename):
             lines.append(line.strip())
     return lines
 
+
 def convert(lines):
     new = []
     person = None # 如果今天運行至append還未定義person,就會crash。所以要預設person。 
@@ -17,10 +18,10 @@ def convert(lines):
         elif line == 'Tom':
             person = 'Tom'
             continue
-
         if person: # 如果person有值，才會加入清單
             new.append(person + ': ' + line)
     return new
+
 
 def write_file(filename, lines):
     with open(filename, 'w') as f: # 重新寫入後可以不用再呼叫編碼
@@ -32,5 +33,6 @@ def main():
     lines = read_file('input.txt')
     lines = convert(lines)
     write_file('output.txt', lines)
+
 
 main()
