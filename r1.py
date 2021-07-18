@@ -23,7 +23,7 @@ def convert(lines):
     return new
 
 def write_file(filename, lines):
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(filename, 'w') as f: # 重新寫入後可以不用再呼叫編碼
         for line in lines:
             f.write(line + '\n')
 
